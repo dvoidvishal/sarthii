@@ -120,8 +120,6 @@ public class walk_through extends AppCompatActivity {
 
             }
 
-
-
         }
 
         @Override
