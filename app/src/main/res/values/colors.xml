@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="laal">#F3A289</color>
+    <color name="colorPrimary">#008577</color>
+
+    <color name="neela">#B1FAF0</color>
+    <color name="colorPrimaryDark">#00574B</color>
+
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorTransparentWhite">#cccccc</color>
+
+    <color name="black">#000000</color>
+    <color name="safed">#FFFFFF</color>
+
+
+</resources>
