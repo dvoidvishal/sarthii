@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/extracurricular"
+            android:title="HOME" />
+
+        <item
+            android:id="@+id/nav_all_categories"
+            android:icon="@drawable/extracurricular"
+            android:title="ALL CATEGORIES" />
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/extracurricular"
+            android:title="NOTIFICATIONS" />
+        <item
+            android:id="@+id/nav_best_tutors"
+            android:icon="@drawable/extracurricular"
+            android:title="BEST TUTORS" />
+    </group>
+
+    <item android:title="Profile">
+        <menu>
+
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_login"
+                    android:icon="@drawable/extracurricular"
+                    android:title="LOGIN" />
+
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/extracurricular"
+                    android:title="PROFILE" />
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/extracurricular"
+                    android:title="LOGOUT" />
+
+            </group>
+
+
+        </menu>
+
+    </item>
+
+    <item android:title="Categories">
+        <menu>
+
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_home_tutors"
+                    android:icon="@drawable/extracurricular"
+                    android:title="Home Tutors" />
+
+                <item
+                    android:id="@+id/nav_professional_tutors"
+                    android:icon="@drawable/extracurricular"
+                    android:title="Professional Tutors" />
+                <item
+                    android:id="@+id/nav_local_tutors"
+                    android:icon="@drawable/extracurricular"
+                    android:title="Local Tutors" />
+
+            </group>
+
+
+        </menu>
+
+    </item>
+
+    <item android:title="Share">
+        <menu>
+
+            <group android:checkableBehavior="none">
+                <item
+                    android:id="@+id/nav_home_share"
+                    android:icon="@drawable/extracurricular"
+                    android:title="Share" />
+
+                <item
+                    android:id="@+id/nav_rate_us"
+                    android:icon="@drawable/extracurricular"
+                    android:title="Rate Us" />
+
+
+            </group>
+
+
+        </menu>
+
+    </item>
+
+
+</menu>

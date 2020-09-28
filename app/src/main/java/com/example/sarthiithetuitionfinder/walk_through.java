@@ -111,7 +111,7 @@ public class walk_through extends AppCompatActivity {
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
         {
 
-            if(position==4){
+            if(position==5){
 
 
                 Intent ii= new Intent(walk_through.this, DashBoard.class);
@@ -138,6 +138,7 @@ public class walk_through extends AppCompatActivity {
                 back.setVisibility(View.VISIBLE);
 
                 next.setText("Finish");
+
             }
 
             else{
