@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "856298596582",
+    "firebase_url": "https://sarthiithetuitionfinder.firebaseio.com",
+    "project_id": "sarthiithetuitionfinder",
+    "storage_bucket": "sarthiithetuitionfinder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856298596582:android:b43724ec598dcca9903327",
+        "android_client_info": {
+          "package_name": "com.example.sarthiithetuitionfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856298596582-sna6kf56okcq4ebd26gdipjjq4r86j4q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sarthiithetuitionfinder",
+            "certificate_hash": "434b56a13163f962fe93e27baa59e230dcb1b754"
+          }
+        },
+        {
+          "client_id": "856298596582-glkjmc1j750kvkt1bfppef25g8ufcelr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEUyoWJTEnoowt7XDbuatfXfIcgqB8UoU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856298596582-glkjmc1j750kvkt1bfppef25g8ufcelr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
