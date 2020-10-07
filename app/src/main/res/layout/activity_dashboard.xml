@@ -31,6 +31,9 @@
             android:padding="10dp">
 
             <ImageView
+                android:clickable="true"
+                android:onClick="openNav"
+                android:id="@+id/menuHam"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/menu">
@@ -100,6 +103,7 @@
 
 
             <LinearLayout
+                android:onClick="openUnderDevPage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -134,6 +138,7 @@
 
 
             <LinearLayout
+                android:onClick="openUnderDevPage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -165,10 +170,65 @@
 
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="openAdvanceSerach"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/card1"
+                    android:elevation="8dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/searchicon">
+
+                    </ImageView>
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Search"
+                    android:textAlignment="center" />
+
+
+            </LinearLayout>
 
 
         </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Coaching Centers Added"
+                android:textAlignment="center"
+                android:textSize="20dp">
+            </TextView>
+            <TextView
+                android:id="@+id/dashboardCenterCount"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:textColor="@color/colorPrimary"
+                android:textSize="50dp">
+            </TextView>
 
+        </LinearLayout>
 
     </LinearLayout>
 

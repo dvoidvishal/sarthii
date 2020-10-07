@@ -6,16 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TutionModal {
-    String Name, Contact, Email, NoOfBatches;
+    String Name, Contact, Email, NoOfBatches, Other;
     List<String> Classes = new ArrayList<>(), Qualifications = new ArrayList<>(), Subjects = new ArrayList<>();
 
     public TutionModal() {}
 
-    public TutionModal(String name, String contact, String email, String noOfBatches, List<String> classes, List<String> qualifications, List<String> subjects) {
+    public TutionModal(String name, String contact, String email, String noOfBatches, String other, List<String> classes, List<String> qualifications, List<String> subjects) {
         Name = name;
         Contact = contact;
         Email = email;
         NoOfBatches = noOfBatches;
+        Other = other;
         Classes = classes;
         Qualifications = qualifications;
         Subjects = subjects;
@@ -51,6 +52,14 @@ public class TutionModal {
 
     public void setNoOfBatches(String noOfBatches) {
         NoOfBatches = noOfBatches;
+    }
+
+    public String getOther() {
+        return Other;
+    }
+
+    public void setOther(String other) {
+        Other = other;
     }
 
     public List<String> getClasses() {

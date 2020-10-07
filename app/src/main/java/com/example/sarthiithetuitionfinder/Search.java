@@ -85,7 +85,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
         if(searchValueStr.length() > 0) {
             Query query = database.getReference("tutions")
                     .orderByChild("Name")
-                    .equalTo(searchValueStr);
+                    .startAt(searchValueStr);
             query.addValueEventListener(valueEventListener);
         }else {
             dbCourses = database.getReference("tutions");
@@ -100,16 +100,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
             if(dataSnapshot.exists()){
                 for(DataSnapshot data: dataSnapshot.getChildren()) {
                     TutionModal tutionModal = data.getValue(TutionModal.class);
-//                    String searchValueStr = searchValue.getText().toString();
-//                    if(searchValueStr.length() > 0) {
-//                        Boolean isExists = tutionModal.getSubjects().contains(searchValueStr);
-//                       if(tutionModal.getSubjects().contains(searchValueStr) == true){
-//                            tutionModalList.add(tutionModal);
-//                        }
-//                    }
-//                    else {
-                        tutionModalList.add(tutionModal);
-//                    }
+                     tutionModalList.add(tutionModal);
                 }
                 tutionAdapter.notifyDataSetChanged();
             }
