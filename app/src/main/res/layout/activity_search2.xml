@@ -8,8 +8,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="404dp"
+        android:layout_height="120dp"
+        android:background="@drawable/margo"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,25 +18,29 @@
 
         <EditText
             android:id="@+id/searchValue"
-            android:layout_width="match_parent"
-            android:layout_height="57dp"
+            android:layout_width="365dp"
+            android:layout_height="608dp"
+            android:layout_marginLeft="18dp"
             android:layout_weight="1"
-            android:background="@drawable/margo"
+            android:background="@drawable/edit_round"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Enter Subject"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:gravity="center"
             app:layout_constraintTop_toTopOf="parent"></EditText>
 
         <Button
             android:id="@+id/searchBtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/neela"
-            android:gravity="center"
+            android:layout_height="40dp"
+            android:layout_marginVertical="10dp"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:text="Search"
             android:layout_marginTop="05dp"
             android:layout_marginBottom="05dp"
+            android:background="@drawable/button_round"
+            android:gravity="center"
+            android:text="Search"
             android:textColor="@color/safed"></Button>
     </LinearLayout>
 
