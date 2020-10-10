@@ -77,7 +77,46 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
 //        dbCourses.addValueEventListener(valueEventListener);
 
         db = FirebaseFirestore.getInstance();
-        getData(null);
+
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null ) {
+            int fromAdvance = bundle.getInt("fromAdvance", 0);
+            if(fromAdvance != 0) {
+                String city = bundle.getString("city");
+                String subject = bundle.getString("subject");
+                getAdvanceData(city, subject);
+            }else {
+                getData(null);
+            }
+
+        }else {
+            getData(null);
+        }
+
+    }
+
+    public void getAdvanceData(String city, String subject){
+        tutionModalList.clear();
+        db.collection("tutions")
+                .whereEqualTo("City", city)
+                .whereArrayContains("Subjects", subject)
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                            Log.d("document.getId()", document.getId() + " => " + document.getData());
+                            tutionModalList.add(document.toObject(TutionModal.class));
+                        }
+                        tutionAdapter.notifyDataSetChanged();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("onFailure: ", "onFailure: " + e);
+            }
+        });
+
     }
 
     @Override
