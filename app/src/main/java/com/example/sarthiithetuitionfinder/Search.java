@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.sarthiithetuitionfinder.Adapter.TutionAdapter;
+import com.example.sarthiithetuitionfinder.helpers.StringUtils;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -84,7 +85,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
             if(fromAdvance != 0) {
                 String city = bundle.getString("city");
                 String subject = bundle.getString("subject");
-                getAdvanceData(city, subject);
+                getAdvanceData(city.trim(), subject.trim());
             }else {
                 getData(null);
             }
@@ -97,9 +98,10 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
 
     public void getAdvanceData(String city, String subject){
         tutionModalList.clear();
+        StringUtils utils = new StringUtils();
         db.collection("tutions")
                 .whereEqualTo("City", city)
-                .whereArrayContains("Subjects", subject)
+                .whereArrayContains("Subjects", utils.toTitleCase(subject))
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
@@ -137,7 +139,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
         tutionModalList.clear();
         if(value != null) {
             db.collection("tutions")
-                    .whereArrayContains("Subjects", value).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    .whereArrayContains("Subjects", new StringUtils().toTitleCase(value.trim())).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                 @Override
                 public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                     for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
