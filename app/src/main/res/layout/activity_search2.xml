@@ -10,34 +10,40 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/searchValue"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:background="@drawable/margo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center"
             app:layout_constraintTop_toTopOf="parent"></EditText>
 
         <Button
             android:id="@+id/searchBtn"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:textColor="@color/safed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search"></Button>
+            android:backgroundTint="@color/neela"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:text="Search"
+            android:layout_marginTop="05dp"
+            android:layout_marginBottom="05dp"
+            android:textColor="@color/safed"></Button>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/searchList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#65E4A6"
+        android:background="@drawable/margo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
