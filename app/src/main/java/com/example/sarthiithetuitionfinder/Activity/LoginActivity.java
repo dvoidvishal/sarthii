@@ -58,7 +58,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if(userEmail.equals("") || userPass.equals("")) {
             Toast.makeText(this, "Invalid Email/Password", Toast.LENGTH_SHORT);
             login.setEnabled(true);
-        }else {
+        }
+
+        else if (userEmail.isEmpty() || userPass.isEmpty()){
+
+
+                Toast.makeText(this, "Please Enter Login Credentials", Toast.LENGTH_SHORT);
+
+        }
+
+        else {
             Toast.makeText(this, "Please wait while we log you in!", Toast.LENGTH_SHORT).show();
             FirebaseAuth.getInstance().signInWithEmailAndPassword(userEmail, userPass)
                     .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
