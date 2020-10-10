@@ -136,19 +136,25 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     public void doSignup() {
         sigup.setEnabled(false);
         String userEmail = email.getText().toString(), userPass = password.getText().toString();
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(userEmail, userPass)
-        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                saveUserData();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(SignupActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                sigup.setEnabled(true);
-            }
-        });
+        if(userEmail.equals("") || userPass.equals("")) {
+            sigup.setEnabled(true);
+            Toast.makeText(this, "Invalid Details", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(this, "Please wait while we create your account", Toast.LENGTH_SHORT).show();
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(userEmail, userPass)
+                    .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+                            saveUserData();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(SignupActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    sigup.setEnabled(true);
+                }
+            });
+        }
     }
     public void saveUserData() {
         DatabaseReference mRef = FirebaseDatabase.getInstance().getReference("userData");
@@ -164,6 +170,12 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 startActivity(new Intent(SignupActivity.this, DashBoard.class));
                 finish();
                 Toast.makeText(SignupActivity.this, "User Created Successfully", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(SignupActivity.this, "Something went Wrong", Toast.LENGTH_SHORT).show();
+                sigup.setEnabled(true);
             }
         });
     }

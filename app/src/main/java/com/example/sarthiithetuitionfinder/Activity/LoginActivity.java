@@ -54,12 +54,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
     public void doLogin() {
         login.setEnabled(false);
-        Toast.makeText(this, "Please wait while we log you in!", Toast.LENGTH_SHORT).show();
         String userEmail = email.getText().toString(), userPass = pass.getText().toString();
         if(userEmail.equals("") || userPass.equals("")) {
             Toast.makeText(this, "Invalid Email/Password", Toast.LENGTH_SHORT);
             login.setEnabled(true);
         }else {
+            Toast.makeText(this, "Please wait while we log you in!", Toast.LENGTH_SHORT).show();
             FirebaseAuth.getInstance().signInWithEmailAndPassword(userEmail, userPass)
                     .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
