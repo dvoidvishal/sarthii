@@ -24,6 +24,7 @@ import android.widget.Toast;
 import com.example.sarthiithetuitionfinder.Activity.AdvanceSearchActitvity;
 import com.example.sarthiithetuitionfinder.Activity.LoginActivity;
 import com.example.sarthiithetuitionfinder.Activity.UnderDevelopment;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -32,6 +33,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class DashBoard extends AppCompatActivity {
 
@@ -42,6 +45,8 @@ public class DashBoard extends AppCompatActivity {
     int centerCount = 0;
     FirebaseAuth mAuth;
     ImageView menuHam;
+
+    FirebaseFirestore firestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +77,15 @@ public class DashBoard extends AppCompatActivity {
 
         dashboardCenterCount = new TextView(this);
         dashboardCenterCount = findViewById(R.id.dashboardCenterCount);
-        DatabaseReference db = FirebaseDatabase.getInstance().getReference("tutions");
-        db.addValueEventListener(valueEventListener);
+//        DatabaseReference db = FirebaseDatabase.getInstance().getReference("tutions");
+//        db.addValueEventListener(valueEventListener);
+        firestore = FirebaseFirestore.getInstance();
+        firestore.collection("tutions").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                dashboardCenterCount.setText(String.valueOf(queryDocumentSnapshots.size()));
+            }
+        });
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override

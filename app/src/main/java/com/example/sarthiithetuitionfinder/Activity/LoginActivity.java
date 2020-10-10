@@ -56,21 +56,27 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         login.setEnabled(false);
         Toast.makeText(this, "Please wait while we log you in!", Toast.LENGTH_SHORT).show();
         String userEmail = email.getText().toString(), userPass = pass.getText().toString();
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(userEmail, userPass)
-        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                login.setEnabled(true);
-                Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(LoginActivity.this, DashBoard.class));
-                finish();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                login.setEnabled(true);
-                Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        if(userEmail.equals("") || userPass.equals("")) {
+            Toast.makeText(this, "Invalid Email/Password", Toast.LENGTH_SHORT);
+            login.setEnabled(true);
+        }else {
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(userEmail, userPass)
+                    .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+                            login.setEnabled(true);
+                            Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivity.this, DashBoard.class));
+                            finish();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    login.setEnabled(true);
+                    Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
     }
 }

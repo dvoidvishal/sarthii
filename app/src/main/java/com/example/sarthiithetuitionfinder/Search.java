@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.example.sarthiithetuitionfinder.Adapter.TutionAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +24,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +45,8 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
 
     FirebaseDatabase database;
     DatabaseReference dbCourses;
+
+    FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +74,10 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
 
         database = FirebaseDatabase.getInstance();
         dbCourses = database.getReference("tutions");
-        dbCourses.addValueEventListener(valueEventListener);
+//        dbCourses.addValueEventListener(valueEventListener);
+
+        db = FirebaseFirestore.getInstance();
+        getData(null);
     }
 
     @Override
@@ -79,8 +88,57 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
                 break;
         }
     }
-
     public void updateList() {
+        String searchValueStr = searchValue.getText().toString();
+
+        getData(searchValueStr);
+    }
+
+    public void getData(String value) {
+        tutionModalList.clear();
+        if(value != null) {
+            db.collection("tutions")
+                    .whereArrayContains("Subjects", value).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                @Override
+                public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                    for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                        Log.d("document.getId()", document.getId() + " => " + document.getData());
+                        tutionModalList.add(document.toObject(TutionModal.class));
+                    }
+                    tutionAdapter.notifyDataSetChanged();
+                    Toast.makeText(Search.this, "Done", Toast.LENGTH_SHORT).show();
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(Search.this, "Error While Fetching Data", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }else {
+            db.collection("tutions")
+                    .get()
+                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                        @Override
+                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                            for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                                Log.d("document.getId()", document.getId() + " => " + document.getData());
+                                tutionModalList.add(document.toObject(TutionModal.class));
+                            }
+                            tutionAdapter.notifyDataSetChanged();
+                            Toast.makeText(Search.this, "Done", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(Search.this, "Error While Fetching Data", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+    }
+
+    public void updateListFromRealDb() {
         String searchValueStr = searchValue.getText().toString();
         if(searchValueStr.length() > 0) {
             Query query = database.getReference("tutions")
