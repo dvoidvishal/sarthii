@@ -41,6 +41,8 @@ public class TutionAdapter extends RecyclerView.Adapter<TutionAdapter.TutionView
         final TutionModal modal = tutionModalList.get(position);
         final Context thisCon = this.mCtx;
         holder.name.setText(modal.getName());
+        holder.city.setText(modal.getCity());
+
         holder.single_search_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,11 +65,12 @@ public class TutionAdapter extends RecyclerView.Adapter<TutionAdapter.TutionView
     }
 
     public class TutionViewHolder extends RecyclerView.ViewHolder {
-        TextView name, contact, email, subjects;
+        TextView name, contact, email, subjects, city;
         CardView single_search_item;
         public TutionViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.headingTv);
+            city = itemView.findViewById(R.id.cityTv);
             single_search_item = itemView.findViewById(R.id.single_search_item);
 
         }
