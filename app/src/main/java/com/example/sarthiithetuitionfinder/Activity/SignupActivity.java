@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -13,6 +14,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,13 +35,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
+public class SignupActivity extends AppCompatActivity implements View.OnClickListener, LocationListener {
 
     EditText name, email, password, adress;
     Button sigup, login;
     ImageView btn;
     RadioButton r1,r2;
     LocationManager lm;
+    LocationListener locationListener;
     String address;
 
 
@@ -49,7 +52,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        lm= (LocationManager) getSystemService(LOCATION_SERVICE);
+        lm= (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
 
         name = new EditText(this);
@@ -62,7 +65,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
         sigup = new Button(this);
         login = new Button(this);
-        btn= (ImageView) findViewById(R.id.imageView);
+        btn= (ImageView) findViewById(R.id.addresslocation);
         adress= (EditText) findViewById(R.id.addressbox);
         r1= (RadioButton) findViewById(R.id.radioButton1);
         r2= (RadioButton) findViewById(R.id.radioButton2);
@@ -74,52 +77,23 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
         //code to get location of user
 
-      /*  btn.setOnClickListener(new View.OnClickListener() {
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(ActivityCompat.checkSelfPermission(SignupActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION)!= PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(SignupActivity.this,Manifest.permission.ACCESS_FINE_LOCATION)!=PackageManager.PERMISSION_GRANTED){
                     ActivityCompat.requestPermissions(SignupActivity.this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.ACCESS_FINE_LOCATION},0);
                     return;
                 }
-
-
-                lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, new LocationListener() {
-                    @Override
-                    public void onLocationChanged(Location location) {
-                        double lat=location.getLatitude();
-                        double lol=location.getLongitude();
-
-                        Geocoder data=new Geocoder(SignupActivity.this);
-
-                        try{
-                            List<Address> list=data.getFromLocation(lat,lol,1);
-                            address=list.get(0).getAddressLine(0);
-                        }
-                        catch (Exception e){}
-                    }
-
-                    @Override
-                    public void onStatusChanged(String provider, int status, Bundle extras) {
-
-                    }
-
-                    @Override
-                    public void onProviderEnabled(String provider) {
-
-                    }
-
-                    @Override
-                    public void onProviderDisabled(String provider) {
-                        Toast.makeText(SignupActivity.this, "Turn on Location!", Toast.LENGTH_LONG).show();
-                    }
-                });
-                adress.setText(address);
-
+                btn.setEnabled(false);
+                Toast.makeText(SignupActivity.this, "Please wait while we fetch your location", Toast.LENGTH_LONG).show();
+                lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, SignupActivity.this);
             }
-        }); */
+        });
 
 
     }
+
+
 
     @Override
     public void onClick(View v) {
@@ -132,7 +106,6 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 break;
         }
     }
-
     public void doSignup() {
         sigup.setEnabled(false);
         String userEmail = email.getText().toString(), userPass = password.getText().toString();
@@ -178,5 +151,40 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 sigup.setEnabled(true);
             }
         });
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        Log.d("onLocationChanged: ", "onLocationChanged: "+ location);
+        Geocoder g = new Geocoder(this);
+        try{
+            List<Address> add = g.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+            Log.d("onLocationChanged: ", "onLocationChanged: " + add);
+            adress.setText(add.get(0).getAddressLine(0));
+            btn.setEnabled(true);
+
+        }catch (Exception e) {
+            adress.setText(e.getMessage());
+            btn.setEnabled(true);
+        }
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+        Log.d("Latitude","disable");
+        btn.setEnabled(true);
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+        Log.d("Latitude","enable");
+        btn.setEnabled(true);
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+        Log.d("Latitude","status");
+        btn.setEnabled(true);
     }
 }
