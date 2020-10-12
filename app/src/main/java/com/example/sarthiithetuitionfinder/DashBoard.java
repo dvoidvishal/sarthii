@@ -5,6 +5,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.content.Context;
 import android.content.Intent;
@@ -71,9 +74,15 @@ public class DashBoard extends AppCompatActivity {
             public void onClick(View v) {
                 Intent searchPage = new Intent(DashBoard.this, Search.class);
                 startActivity(searchPage);
+
             }
         });
 
+        NavigationView navigationView = findViewById(R.id.navigation_view);
+        navigationView.setItemIconTintList(null);
+
+        NavController navController = Navigation.findNavController(this, R.id.navHostFragment);
+        NavigationUI.setupWithNavController(navigationView, navController);
 
         dashboardCenterCount = new TextView(this);
         dashboardCenterCount = findViewById(R.id.dashboardCenterCount);

@@ -138,7 +138,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         String userEmail = email.getText().toString(), userPass = password.getText().toString();
         if(userEmail.equals("") || userPass.equals("")) {
             sigup.setEnabled(true);
-            Toast.makeText(this, "Invalid Details", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please fill all the Details", Toast.LENGTH_SHORT).show();
         }else {
             Toast.makeText(this, "Please wait while we create your account", Toast.LENGTH_SHORT).show();
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(userEmail, userPass)

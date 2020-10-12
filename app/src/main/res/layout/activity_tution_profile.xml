@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/card1"
     tools:context=".Activity.TutionProfile">
 
     <ImageView
@@ -11,9 +12,21 @@
         android:layout_width="wrap_content"
         android:layout_height="250dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/parttimejob" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_margin="10dp"
+        android:elevation="25dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,7 +63,8 @@
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="100dp"                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
                 android:text="Contact" />
 
             <TextView
@@ -154,5 +168,7 @@
                 android:text="TextView" />
         </LinearLayout>
 
+
     </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

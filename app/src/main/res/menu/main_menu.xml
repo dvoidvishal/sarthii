@@ -3,41 +3,37 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/extracurricular"
-            android:title="HOME" />
+            android:id="@+id/stud_profile"
+            android:icon="@drawable/studentprofile_drawer"
+            android:title="Profile" />
 
         <item
-            android:id="@+id/nav_all_categories"
-            android:icon="@drawable/extracurricular"
-            android:title="ALL CATEGORIES" />
+            android:id="@+id/join_tutions"
+            android:icon="@drawable/jointutors_drawer"
+            android:title="Join Tuitions" />
         <item
-            android:id="@+id/nav_notifications"
-            android:icon="@drawable/extracurricular"
-            android:title="NOTIFICATIONS" />
+            android:id="@+id/crash_course"
+            android:icon="@drawable/crash_courses_drawer"
+            android:title="Crash Courses" />
         <item
-            android:id="@+id/nav_best_tutors"
-            android:icon="@drawable/extracurricular"
-            android:title="BEST TUTORS" />
+            android:id="@+id/toprated_tutors"
+            android:icon="@drawable/topratedtutors_drawer"
+            android:title="Best Tutors" />
     </group>
 
-    <item android:title="Profile">
+    <item android:title="Portals">
         <menu>
 
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_login"
-                    android:icon="@drawable/extracurricular"
-                    android:title="LOGIN" />
+                    android:id="@+id/paent_portal"
+                    android:icon="@drawable/parentportal_drawer"
+                    android:title="Parent Portal" />
 
                 <item
-                    android:id="@+id/nav_profile"
-                    android:icon="@drawable/extracurricular"
-                    android:title="PROFILE" />
-                <item
-                    android:id="@+id/nav_logout"
-                    android:icon="@drawable/extracurricular"
-                    android:title="LOGOUT" />
+                    android:id="@+id/tutor_portal"
+                    android:icon="@drawable/tutorportal_drawer"
+                    android:title="Tutor Portal" />
 
             </group>
 
@@ -46,44 +42,32 @@
 
     </item>
 
-    <item android:title="Categories">
-        <menu>
-
-            <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/nav_home_tutors"
-                    android:icon="@drawable/extracurricular"
-                    android:title="Home Tutors" />
-
-                <item
-                    android:id="@+id/nav_professional_tutors"
-                    android:icon="@drawable/extracurricular"
-                    android:title="Professional Tutors" />
-                <item
-                    android:id="@+id/nav_local_tutors"
-                    android:icon="@drawable/extracurricular"
-                    android:title="Local Tutors" />
-
-            </group>
-
-
-        </menu>
-
-    </item>
-
-    <item android:title="Share">
+    <item android:title="Settings"
+        android:icon="@drawable/settings_drawer">
         <menu>
 
             <group android:checkableBehavior="none">
                 <item
-                    android:id="@+id/nav_home_share"
-                    android:icon="@drawable/extracurricular"
-                    android:title="Share" />
+                    android:id="@+id/notification"
+                    android:icon="@drawable/notification_drawer"
+                    android:title="Notifications" />
 
                 <item
-                    android:id="@+id/nav_rate_us"
-                    android:icon="@drawable/extracurricular"
-                    android:title="Rate Us" />
+                    android:id="@+id/feedback"
+                    android:icon="@drawable/feedback_drawer"
+                    android:title="Feedback" />
+
+
+                <item
+                    android:id="@+id/about"
+                    android:icon="@drawable/about_drawer"
+                    android:title="About Us" />
+
+
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/logout_drawer"
+                    android:title="Logout" />
 
 
             </group>

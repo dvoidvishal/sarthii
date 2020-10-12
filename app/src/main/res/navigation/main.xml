@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/stud_profile">
+
+    <fragment
+        android:id="@+id/stud_profile"
+        android:name="com.example.sarthiithetuitionfinder.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/join_tutions"
+        android:name="com.example.sarthiithetuitionfinder.JoinTuitionFragment"
+        android:label="Join Tuition"
+        tools:layout="@layout/fragment_join_tuition" />
+    <fragment
+        android:id="@+id/crash_course"
+        android:name="com.example.sarthiithetuitionfinder.CrashCoursesFragment"
+        android:label="Crash Courses"
+        tools:layout="@layout/fragment_crash_courses" />
+    <fragment
+        android:id="@+id/toprated_tutors"
+        android:name="com.example.sarthiithetuitionfinder.BestTutorsFragment"
+        android:label="Best Tutors"
+        tools:layout="@layout/fragment_best_tutors" />
+    <fragment
+        android:id="@+id/paent_portal"
+        android:name="com.example.sarthiithetuitionfinder.ParentPortalFragment"
+        android:label="Parent Portal"
+        tools:layout="@layout/fragment_parent_portal" />
+    <fragment
+        android:id="@+id/tutor_portal"
+        android:name="com.example.sarthiithetuitionfinder.TutorPortalFragment"
+        android:label="Tutor Portal"
+        tools:layout="@layout/fragment_tutor_portal" />
+    <fragment
+        android:id="@+id/notification"
+        android:name="com.example.sarthiithetuitionfinder.NotificationFragment"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/feedback"
+        android:name="com.example.sarthiithetuitionfinder.FeedbackFragment"
+        android:label="Feedback"
+        tools:layout="@layout/fragment_feedback" />
+    <fragment
+        android:id="@+id/about"
+        android:name="com.example.sarthiithetuitionfinder.AboutUsFragment"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.sarthiithetuitionfinder.LogoutFragment"
+        android:label="Logout"
+        tools:layout="@layout/fragment_logout" />
+</navigation>

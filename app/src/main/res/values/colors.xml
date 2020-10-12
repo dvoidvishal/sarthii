@@ -11,6 +11,13 @@
 
     <color name="black">#000000</color>
     <color name="safed">#FFFFFF</color>
+    <color name="purple">#673AB7</color>
+    <color name="purple2">#512DAB</color>
+    <color name="red2">#FF5252</color>
+    <color name="kala">#212121</color>
+    <color name="green">#32CD32</color>
+
+
 
 
 </resources>
