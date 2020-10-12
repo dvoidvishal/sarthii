@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
@@ -22,6 +24,10 @@ public class Feedback extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_feedback);
+
         ratingBar = findViewById(R.id.rating);
         editText = findViewById(R.id.comment);
         button = findViewById(R.id.feedback_submit);
@@ -32,7 +38,7 @@ public class Feedback extends AppCompatActivity {
                 String comment = editText.getText().toString();
                 float rat = ratingBar.getRating();
 
-                String to[] = {"hi.simplicitydev@gmail.com"};
+                String to[] = {"dvoidvishal@gmail.com"};
                 String sub = "Feedback for app";
 
                 if (comment.isEmpty() && rat == 0) {

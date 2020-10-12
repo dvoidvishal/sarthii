@@ -25,7 +25,6 @@ public class Splash_Screen extends AppCompatActivity {
       this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
        requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-
        setContentView(R.layout.splash_screen);
 
         logo=  findViewById(R.id.logo);

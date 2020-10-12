@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintVertical_bias="0.026" />
 
     <TextView
         android:id="@+id/textView3"
@@ -25,13 +25,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="192dp"
         android:text="Sarthii - The Tuition Finder"
         android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.242" />
 
     <TextView
         android:id="@+id/textView4"
@@ -40,14 +41,15 @@
         android:layout_height="75dp"
         android:layout_below="@id/textView3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="236dp"
         android:gravity="center"
         android:text="This app works as a bridge between Student and Tutor,
 Helps user find a tuition with Great Quality of Education, Nearby user's Location with Reasonable Fees"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.336" />
 
     <TextView
         android:id="@+id/textView5"
@@ -56,12 +58,13 @@ Helps user find a tuition with Great Quality of Education, Nearby user's Locatio
         android:layout_height="wrap_content"
         android:layout_below="@id/textView4"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="320dp"
         android:text="API AND SUPPORT LIBRARIES USED:"
         android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.44" />
 
     <TextView
         android:id="@+id/volley"
@@ -70,13 +73,13 @@ Helps user find a tuition with Great Quality of Education, Nearby user's Locatio
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView5"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="352dp"
         android:text="Volley"
         android:textAlignment="center"
         android:textColorLink="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/cardview"
@@ -85,14 +88,15 @@ Helps user find a tuition with Great Quality of Education, Nearby user's Locatio
         android:layout_height="wrap_content"
         android:layout_below="@+id/volley"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="320dp"
         android:text="Card View"
         android:textAlignment="center"
         android:textColorLink="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.548" />
 
     <TextView
         android:id="@+id/recyclerview"
@@ -101,13 +105,14 @@ Helps user find a tuition with Great Quality of Education, Nearby user's Locatio
         android:layout_height="wrap_content"
         android:layout_below="@+id/cardview"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="288dp"
         android:text="Recycler View"
         android:textAlignment="center"
         android:textColorLink="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.592" />
 
     <TextView
         android:id="@+id/bb_api"
@@ -116,14 +121,14 @@ Helps user find a tuition with Great Quality of Education, Nearby user's Locatio
         android:layout_height="wrap_content"
         android:layout_below="@+id/recyclerview"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="256dp"
         android:text="Google Firebase"
         android:textAlignment="center"
         android:textColorLink="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.633" />
 
     <TextView
         android:id="@+id/hosp_api"
@@ -132,14 +137,14 @@ Helps user find a tuition with Great Quality of Education, Nearby user's Locatio
         android:layout_height="wrap_content"
         android:layout_below="@+id/bb_api"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="224dp"
         android:text="Firestore"
         android:textAlignment="center"
         android:textColorLink="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681" />
 
     <TextView
         android:id="@+id/st_json"
@@ -148,14 +153,15 @@ Helps user find a tuition with Great Quality of Education, Nearby user's Locatio
         android:layout_height="wrap_content"
         android:layout_below="@+id/hosp_api"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="192dp"
         android:text="Real Time Databse"
         android:textAlignment="center"
         android:textColorLink="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.729" />
 
     <TextView
         android:id="@+id/textView7"
@@ -164,13 +170,14 @@ Helps user find a tuition with Great Quality of Education, Nearby user's Locatio
         android:layout_height="wrap_content"
         android:layout_below="@id/hosp_api"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="144dp"
         android:text="Developed By:"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.788" />
 
     <TextView
         android:id="@+id/textView8"
@@ -180,13 +187,14 @@ Helps user find a tuition with Great Quality of Education, Nearby user's Locatio
         android:layout_below="@id/textView7"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginBottom="108dp"
         android:gravity="center"
         android:text="Vishal Kumar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.851" />
 
     <TextView
         android:id="@+id/textView9"
@@ -196,13 +204,14 @@ Helps user find a tuition with Great Quality of Education, Nearby user's Locatio
         android:layout_below="@id/textView7"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginBottom="72dp"
         android:gravity="center"
         android:text="Kush Pratap Singh"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.906" />
 
     <TextView
         android:id="@+id/textView10"
@@ -212,12 +221,13 @@ Helps user find a tuition with Great Quality of Education, Nearby user's Locatio
         android:layout_below="@id/textView7"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginBottom="28dp"
         android:gravity="center"
         android:text="Ankit Kumar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.959" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,7 @@
         <item
             android:id="@+id/toprated_tutors"
             android:icon="@drawable/topratedtutors_drawer"
-            android:title="Best Tutors" />
+            android:title="Top Rated Tutors" />
     </group>
 
     <item android:title="Portals">
