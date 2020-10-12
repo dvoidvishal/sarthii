@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.example.sarthiithetuitionfinder.Activity.AdvanceSearchActitvity;
 import com.example.sarthiithetuitionfinder.Activity.LoginActivity;
 import com.example.sarthiithetuitionfinder.Activity.UnderDevelopment;
+import com.example.sarthiithetuitionfinder.Activity.UserProfile;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -79,10 +80,10 @@ public class DashBoard extends AppCompatActivity {
         });
 
         NavigationView navigationView = findViewById(R.id.navigation_view);
-        navigationView.setItemIconTintList(null);
-
-        NavController navController = Navigation.findNavController(this, R.id.navHostFragment);
-        NavigationUI.setupWithNavController(navigationView, navController);
+//        navigationView.setItemIconTintList(null);
+//
+//        NavController navController = Navigation.findNavController(this, R.id.navHostFragment);
+//        NavigationUI.setupWithNavController(navigationView, navController);
 
         dashboardCenterCount = new TextView(this);
         dashboardCenterCount = findViewById(R.id.dashboardCenterCount);
@@ -101,9 +102,11 @@ public class DashBoard extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 if(id == R.id.nav_logout) {
-                    Toast.makeText(DashBoard.this, "inside logout", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(DashBoard.this, "inside logout", Toast.LENGTH_SHORT).show();
+                    doLogout();
                 }else {
-                    Toast.makeText(DashBoard.this, "inside else", Toast.LENGTH_SHORT).show();
+                    startActivityById(id);
+//                    Toast.makeText(DashBoard.this, "inside else", Toast.LENGTH_SHORT).show();
                 }
                 return true;
             }
@@ -165,6 +168,16 @@ public class DashBoard extends AppCompatActivity {
 
     public void openUnderDevPage(View v) {
         startActivity(new Intent(this, UnderDevelopment.class));
+    }
+
+    public void startActivityById(int id) {
+        switch (id) {
+            case R.id.stud_profile:
+                startActivity(new Intent(this, UserProfile.class));
+                break;
+            default:
+                Toast.makeText(this, "To Be Build By Vishal", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
