@@ -9,6 +9,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -175,6 +176,32 @@ public class DashBoard extends AppCompatActivity {
             case R.id.stud_profile:
                 startActivity(new Intent(this, UserProfile.class));
                 break;
+
+            case R.id.join_tutions:
+                startActivity(new Intent(this, Join_Tuitions.class ));
+
+            case R.id.crash_course:
+                startActivity(new Intent(this, Crash_Courses.class));
+
+            case R.id.toprated_tutors:
+                startActivity(new Intent(this, Best_Tutors.class));
+
+            case R.id.parent_portal:
+                startActivity(new Intent(this, Parent_Portal.class));
+
+            case R.id.tutor_portal:
+                startActivity(new Intent(this, Tutor_Portal.class));
+
+            case R.id.notification:
+                startActivity(new Intent(this, Notifications.class));
+
+            case R.id.feedback:
+                startActivity(new Intent(this, Feedback.class));
+
+            case R.id.about:
+                startActivity(new Intent(this, About_us.class));
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
             default:
                 Toast.makeText(this, "To Be Build By Vishal", Toast.LENGTH_SHORT).show();
         }

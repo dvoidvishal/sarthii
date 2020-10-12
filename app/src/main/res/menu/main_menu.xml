@@ -9,7 +9,7 @@
 
         <item
             android:id="@+id/join_tutions"
-            android:icon="@drawable/jointutors_drawer"
+            android:icon="@drawable/join_tuiton_drawer"
             android:title="Join Tuitions" />
         <item
             android:id="@+id/crash_course"
@@ -26,7 +26,7 @@
 
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/paent_portal"
+                    android:id="@+id/parent_portal"
                     android:icon="@drawable/parentportal_drawer"
                     android:title="Parent Portal" />
 

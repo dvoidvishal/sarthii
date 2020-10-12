@@ -14,7 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.UserProfile"></activity>
+        <activity android:name=".About_us"></activity>
+        <activity android:name=".Feedback" />
+        <activity android:name=".Notifications" />
+        <activity android:name=".Tutor_Portal" />
+        <activity android:name=".Parent_Portal" />
+        <activity android:name=".Best_Tutors" />
+        <activity android:name=".Crash_Courses" />
+        <activity android:name=".Join_Tuitions" />
+        <activity android:name=".Activity.UserProfile" />
         <activity android:name=".Activity.UnderDevelopment" />
         <activity android:name=".Activity.AdvanceSearchActitvity" />
         <activity android:name=".Activity.SignupActivity" />
