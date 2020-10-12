@@ -74,7 +74,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
         //code to get location of user
 
-      /*  btn.setOnClickListener(new View.OnClickListener() {
+     /*  btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(ActivityCompat.checkSelfPermission(SignupActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION)!= PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(SignupActivity.this,Manifest.permission.ACCESS_FINE_LOCATION)!=PackageManager.PERMISSION_GRANTED){
@@ -116,7 +116,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 adress.setText(address);
 
             }
-        }); */
+        });  */
 
 
     }
