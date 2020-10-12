@@ -179,28 +179,36 @@ public class DashBoard extends AppCompatActivity {
 
             case R.id.join_tutions:
                 startActivity(new Intent(this, Join_Tuitions.class ));
+                break;
 
             case R.id.crash_course:
                 startActivity(new Intent(this, Crash_Courses.class));
+                break;
 
             case R.id.toprated_tutors:
                 startActivity(new Intent(this, Best_Tutors.class));
+                break;
 
             case R.id.parent_portal:
                 startActivity(new Intent(this, Parent_Portal.class));
+                break;
 
             case R.id.tutor_portal:
                 startActivity(new Intent(this, Tutor_Portal.class));
+                break;
 
             case R.id.notification:
                 startActivity(new Intent(this, Notifications.class));
+                break;
 
             case R.id.feedback:
                 startActivity(new Intent(this, Feedback.class));
+                break;
 
             case R.id.about:
                 startActivity(new Intent(this, About_us.class));
                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                break;
 
             default:
                 Toast.makeText(this, "To Be Build By Vishal", Toast.LENGTH_SHORT).show();
